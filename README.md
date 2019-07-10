@@ -15,7 +15,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Instructions
 
 1. Clone the repository.
-2. Insert the client_id into the script "var_client_id" variable.
+2. Replace the "var_client_id" variable into the script with your client_id.
 3. Copy the Twitch clip link to clipboard.
 4. Execute the script by running the following command:
 ```console  
