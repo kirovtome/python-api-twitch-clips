@@ -21,6 +21,7 @@ These instructions will get you a copy of the project up and running on your loc
 ```console  
 python3 dltwitchclips.py --clip <paste_clip_url_here> 
 ```  
+Note: **Make sure to install the Python3 modules before running the script.**  
 5. The script will create tmp directory where the file will be saved.
 
 ## Known issues
