@@ -2,11 +2,19 @@ import os
 import sys
 import requests
 import urllib.request
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-c", "--clip")
+args = parser.parse_args()
+
+if len(sys.argv) == 1:
+    print("Usage: python3 dltwitchclips.py <paste_clip_url_here>")
+    sys.exit()
 
 client_id = 't0e45nrhaq5ayt8z7qoi4xapaeaemi'
 basepath = 'tmp/'
-full_url = sys.argv[1]
-slug = full_url.rpartition('/')[-1]
+slug = args.clip.rpartition('/')[-1]
 
 clip_info = requests.get("https://api.twitch.tv/helix/clips?id=" + slug, headers={"Client-ID": client_id}).json()
 
