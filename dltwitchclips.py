@@ -3,8 +3,7 @@ import sys
 import requests
 import urllib.request
 
-
-var_client_id = '<insert_your_twitch_client_id_here>'
+var_client_id = 't0e45nrhaq5ayt8z7qoi4xapaeaemi'
 var_basepath = 'tmp/'
 var_full_url = sys.argv[1]
 var_slug = var_full_url.rpartition('/')[-1]
@@ -16,6 +15,8 @@ var_mp4_url = thumb_url.split("-preview",1)[0] + ".mp4"
 var_out_filename = var_slug + ".mp4"
 output_path = (var_basepath + var_out_filename)
 
+print(var_mp4_url)
+
 def dl_progress(count, block_size, total_size):
     percent = int(count * block_size * 100 / total_size)
     sys.stdout.write("\r...%d%%" % percent)
@@ -25,4 +26,7 @@ def dl_progress(count, block_size, total_size):
 if not os.path.exists(var_basepath):
     os.makedirs(var_basepath)
 
-urllib.request.urlretrieve(var_mp4_url, output_path, reporthook=dl_progress)
+try:
+    urllib.request.urlretrieve(var_mp4_url, output_path, reporthook=dl_progress)
+except:
+    print("An exception occurred")
