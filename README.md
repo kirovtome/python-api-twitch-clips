@@ -19,7 +19,7 @@ These instructions will get you a copy of the project up and running on your loc
 3. Copy the Twitch clip link to clipboard.
 4. Execute the script by running the following command:
 ```console  
-python3 dltwitchclips.py <paste_clip_url_here> 
+python3 dltwitchclips.py --clip <paste_clip_url_here> 
 ```  
 5. The script will create tmp directory where the file will be saved.
 

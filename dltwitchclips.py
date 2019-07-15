@@ -4,13 +4,15 @@ import requests
 import urllib.request
 import argparse
 
+
 parser = argparse.ArgumentParser()
 parser.add_argument("-c", "--clip")
 args = parser.parse_args()
 
 if len(sys.argv) == 1:
-    print("Usage: python3 dltwitchclips.py <paste_clip_url_here>")
+    print("Usage: python3 dltwitchclips.py --clip <paste_clip_url_here>")
     sys.exit()
+
 
 client_id = 't0e45nrhaq5ayt8z7qoi4xapaeaemi'
 basepath = 'tmp/'
