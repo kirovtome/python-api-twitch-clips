@@ -14,13 +14,13 @@ if len(sys.argv) == 1:
     sys.exit()
 
 
-client_id = 't0e45nrhaq5ayt8z7qoi4xapaeaemi'
+client_id = 'Your Client ID'
 basepath = 'tmp/'
 slug = args.clip.rpartition('/')[-1]
 
-clip_info = requests.get("https://api.twitch.tv/helix/clips?id=" + slug, headers={"Client-ID": client_id}).json()
+clip_info = requests.get("https://api.twitch.tv/kraken/clips/" + slug, headers={"Client-ID": client_id, "Accept":"application/vnd.twitchtv.v5+json"}).json()
 
-thumb_url = clip_info['data'][0]['thumbnail_url']
+thumb_url = clip_info['thumbnails']['medium']
 mp4_url = thumb_url.split("-preview",1)[0] + ".mp4"
 out_filename = slug + ".mp4"
 output_path = (basepath + out_filename)
